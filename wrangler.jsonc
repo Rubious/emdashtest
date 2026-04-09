@@ -1,0 +1,30 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "emdashtest",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-03-29",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "emdashtestdb","database_id": "03468fd9-c2b7-4693-9764-e77c5516009d",
+			// Run `wrangler d1 create my-emdash-site` and paste the ID here
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "emdashtestmedia","preview_bucket_name": "emdashtestmedia",
+		},
+	],
+	"observability": {
+		"enabled": true,
+	},
+	"worker_loaders": [
+		{
+			"binding": "LOADER",
+		},
+	],
+}
